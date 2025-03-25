@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Entrées de Produits</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gestion des Entrées de Produits</h1>
+
+        <!-- Bouton pour ajouter une nouvelle entrée -->
+        <button id="btnNewEntry">Nouvelle Entrée</button>
+
+        <!-- Tableau des entrées de produits -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Code Facture</th>
+                    <th>Date</th>
+                    <th>Nom Fournisseur</th>
+                    <th>Tél Fournisseur</th>
+                    <th>Libellé Opération</th>
+                    <th>Nom Produit</th>
+                    <th>Quantité Entrée</th>
+                    <th>Caractéristiques</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="productList">
+                <!-- Les entrées de produits seront insérées ici dynamiquement -->
+            </tbody>
+        </table>
+
+        <!-- Détails du produit sélectionné -->
+        <div id="productDetails" class="hidden">
+            <h2>Détails du Produit</h2>
+            <p id="detailsContent"></p>
+            <button onclick="printDetails()">Imprimer</button>
+        </div>
+
+        <!-- Formulaire d'ajout/modification -->
+        <div id="entryForm" class="hidden">
+            <h2>Nouvelle Entrée</h2>
+            <form id="productForm" action="product_operations.php" method="POST">
+                <label>Code Facture: <input type="text" name="codeFacture" required></label>
+                <label>Date: <input type="date" name="date" required></label>
+                <label>Nom Fournisseur: <input type="text" name="nomFournisseur" required></label>
+                <label>Tél Fournisseur: <input type="text" name="telFournisseur" required></label>
+                <label>Libellé Opération: <input type="text" name="libelleOp" required></label>
+                <label>Nom Produit: <input type="text" name="nomProduit" required></label>
+                <label>Quantité Entrée: <input type="number" name="qteEntree" required></label>
+                <label>Stock Min: <input type="number" name="stockMin" required></label>
+                <label>Stock Max: <input type="number" name="stockMax" required></label>
+                <label>Caractéristiques: <textarea name="caracteristiques" required></textarea></label>
+                <button type="submit">Enregistrer</button>
+            </form>
+            
+        </div>
+    </div>
+
+</body>
+</html>

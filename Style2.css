@@ -1,0 +1,38 @@
+
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+#entryForm{
+    display: flex;
+    display: list-item;
+    padding: 100px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#entryForm label {
+    display: block;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+button{
+    color: darkcyan;
+    background-color: #28a745;
+    
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #218838;
+}
+#productDetails {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}

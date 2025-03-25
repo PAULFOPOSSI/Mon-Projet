@@ -1,0 +1,81 @@
+<?php
+ require 'layout.php';
+?>
+
+<?php
+// Connexion à la base de données
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "newbd";
+
+    // connecton a la bd 
+    $con = mysqli_connect ($host, $username, $password, $database);
+    // if ($con ->connect_error){
+    //     die("ERREUR: Eurreur de connexion" .$scon->connect-error);
+    // }
+    if (!$con){
+        die(" Ta Connecion a echouee bro:".mysqli_conect_error() );
+    }
+    else{
+        echo "Bro la connexion a take";
+    }
+?>
+
+
+<!-- ddd -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<div class="container">
+        <h1>Liste des Fournisseurs</h1>
+        <div class="new-enter-and-back">
+
+        <!-- Pour la recuperation des donnees dans la bd-->
+        <!-- Tableau des entrées de produits -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom Fournisseur</th>
+                    <th>Adresse Fournisseur</th>
+                    <th>Email Fournisseur</th>
+                    <th>Tel Fournisseur</th>
+                </tr>
+            </thead>
+            <tbody id="productList">
+                <?php
+                   
+                    
+                       // Exécution de la requête SQL
+            $query = "SELECT Nom_Fournisseur, Adresse_Fournisseur, Email_Fournisseur, Tel_Fournisseur FROM entrees ORDER BY Nom_Fournisseur DESC";
+            $result = mysqli_query($con, $query);
+
+            // Vérification des résultats
+            if (mysqli_num_rows($result) > 0) {
+                // Parcourir les résultats et les afficher
+                while ($item = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($item['Nom_Fournisseur']); ?></td>
+                        <td><?php echo htmlspecialchars($item['Adresse_Fournisseur']); ?></td>
+                        <td><?php echo htmlspecialchars($item['Email_Fournisseur']); ?></td>
+                        <td><?php echo htmlspecialchars($item['Tel_Fournisseur']); ?></td>
+                    </tr>
+                    <?php
+                }
+            } else {
+                // Message si aucune donnée n'est trouvée
+                echo "<tr><td colspan='4'>Aucun fournisseur trouvé.</td></tr>";
+            }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f3f4f6;
+}
+
+.autre-card {
+    background-color: #cccace; /* Vert */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    color: white;
+    display: flex;
+    gap: 35px;
+}
+
+.autre-card .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.autre-card .logo img {
+    width: 80px;
+    height: auto;
+}
+
+.autre-card .slogan {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.inner-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 10px 10px 10px 40px;
+    font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+
+.form-group .icon {
+    position: absolute;
+    left: 10px;
+    font-size: 18px;
+    color: #6b7280;
+}
+
+.form-group .icon:hover {
+    color: #3b82f6;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2563eb;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #374151;
+}
+#app{
+    text-decoration: #3b82f6;
+    font-size: 40px;
+    font-family: ⛲;
+    color: #2c3b50;
+}
+#im2{
+    width: 80px;
+}

@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6200ea, #3700b3);
+    padding: 1rem 2rem;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav ul li {
+    text-decoration: none;
+    gap: 30px;
+   
+}
+nav ul {
+    text-decoration: none;
+    gap: 30px;
+    display: flex;
+}
+    #li:hover {
+            text-decoration: black;
+    }
+    body{
+        text-align: center;
+    }

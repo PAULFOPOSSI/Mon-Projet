@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Entrées de Produits</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Gestion des Entrées de Produits</h1>
+
+    <!-- Formulaire d'ajout de produit -->
+    <form id="productForm" action="product_operations.php" method="POST">
+        <label>Code Facture: <input type="text" name="codeFacture" required></label><br>
+        <label>Date: <input type="date" name="date" required></label><br>
+        <label>Nom Fournisseur: <input type="text" name="nomFournisseur" required></label><br>
+        <label>Tél Fournisseur: <input type="text" name="telFournisseur" required></label><br>
+        <label>Libellé Opération: <input type="text" name="libelleOp" required></label><br>
+        <label>Nom Produit: <input type="text" name="nomProduit" required></label><br>
+        <label>Quantité Entrée: <input type="number" name="qteEntree" required></label><br>
+        <label>Caractéristiques: <textarea name="caracteristiques" required></textarea></label><br>
+        <label>Stock Min: <input type="number" name="stockMin" required></label><br>
+        <label>Stock Max: <input type="number" name="stockMax" required></label><br>
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <!-- Tableau des produits enregistrés -->
+    <h2>Produits Enregistrés</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Code Facture</th>
+                <th>Date</th>
+                <th>Nom Fournisseur</th>
+                <th>Tél Fournisseur</th>
+                <th>Libellé Opération</th>
+                <th>Nom Produit</th>
+                <th>Quantité Entrée</th>
+                <th>Caractéristiques</th>
+            </tr>
+        </thead>
+        <tbody id="productList">
+            <!-- Produits affichés dynamiquement depuis productlist.php -->
+        </tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

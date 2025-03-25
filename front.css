@@ -1,0 +1,216 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style de base pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6200ea, #3700b3);
+    padding: 1rem 2rem;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav ul li {
+    text-decoration: none;
+    gap: 30px;
+   
+}
+nav ul {
+    text-decoration: none;
+    gap: 30px;
+    display: flex;
+}
+    #li:hover {
+            text-decoration: black;
+    }
+/* Bouton pour afficher/masquer la sidebar */
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    transform: rotate(90deg);
+}
+
+/* Logo de la navbar */
+.navbar-logo img {
+    height: 40px;
+    transition: transform 0.3s ease;
+    
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Section droite de la navbar */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Style de la barre de recherche */
+.search-bar {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Boutons de la navbar */
+.navbar-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.navbar-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(135deg, #6200ea, #3700b3);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: -250px; /* Masquée par défaut */
+    transition: left 0.3s ease;
+    z-index: 999;
+ 
+}
+/*    overflow: auto;
+    max-height: 900px; */
+
+.sidebar.active {
+    left: 0; /* Affiche la sidebar */
+}
+
+/* En-tête de la sidebar */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header .logo {
+    height: 50px;
+}
+
+/* Bouton pour fermer la sidebar */
+.sidebar-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-close:hover {
+    transform: rotate(90deg);
+}
+
+/* Menu de la sidebar */
+.sidebar-menu {
+    list-style: none;
+    padding: 1rem;
+    box-shadow: 2px 3px 2px rgb(255, 55, 255);
+}
+
+.sidebar-menu li {
+    margin-bottom: 1rem;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Contenu principal */
+.content {
+    margin-left: 0;
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+}
+
+.content.shifted {
+    margin-left: 250px; /* Décale le contenu lorsque la sidebar est ouverte */
+}
+
+/* Mode nuit */
+body.night-mode {
+    background-color: #1e1e2f;
+    color: #f4f4f9;
+}
+
+.navbar.night-mode {
+    background: linear-gradient(135deg, #1e1e2f, #121212);
+}
+
+.sidebar.night-mode {
+    background: linear-gradient(135deg, #1e1e2f, #121212);
+}
+
+/* Styles pour les écrans de petite taille (mobile) */
+@media (max-width: 768px) {
+    .sidebar {
+        left: -250px; /* Masquée par défaut sur mobile */
+    }
+
+    .sidebar.active {
+        left: 0; /* Affiche la sidebar */
+    }
+
+    .content.shifted {
+        margin-left: 0; /* Pas de décalage sur mobile */
+    }
+}
