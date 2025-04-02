@@ -17,11 +17,7 @@
             <div id="entryForm">
                 <div class="new-enter-and-back">
                     <h2>Details Sur Le Produit</h2>
-<<<<<<< HEAD
                     <a href="Entree.php" id="btnNewEntry">Retour</a>
-=======
-                    <a href="../Entree.php" id="btnNewEntry">Retour</a>
->>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)
                 </div>
                 <form id="productForm" method="POST" actions="update.php">
                     <?php
@@ -51,7 +47,6 @@
 
                                 <label>Quantitée Entrée: </label>
                                 <input type="number" value="<?= $item['Quantitee_Entree'] ?>" name="quantiteEntree" >
-<<<<<<< HEAD
 
                                 <label>Nom Fournisseur: </label>
                                 <input type="text" value="<?= $item['Nom_Fournisseur'] ?>" name="nomFournisseur" >
@@ -65,23 +60,6 @@
                                 <label>Tél Fournisseur: </label>
                                 <input type="number" value="<?= $item['Tel_Fournisseur'] ?>" name="telFournisseur" >
 
-=======
-                                <?php
-                                    $id_fournisseur = $item['Nom_Fournisseur'];
-                                    $fournisseur = getAllEnterById('fournisseurs', $id_fournisseur);
-
-                                    if(mysqli_num_rows($fournisseur) > 0){
-                                        $fournisseur = mysqli_fetch_assoc($fournisseur);
-                                        ?>
-                                            <label>Nom Fournisseur: </label>
-                                            <input type="text" value="<?= $fournisseur['Nom_Fournisseur'] ?>" name="nomFournisseur" >
-                                        <?php
-                                    }
-                                ?>
-                                <label>Nom Fournisseur: </label>
-                                <input type="text" value="<?= $item['Nom_Fournisseur'] ?>" name="nomFournisseur" >
-
->>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)
                                 <label>P.Achat (Fcfa): </label>
                                 <input type="number" value="<?= $item['Prix_Achat'] ?>" name="pAchat" >
 

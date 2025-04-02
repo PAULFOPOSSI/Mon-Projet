@@ -61,7 +61,11 @@
             <li><a href="Sortie.php"><i class="fas fa-sign-out-alt"></i> Sorties</a></li>
             <li><a href="Commandes.php"><i class="fas fa-shopping-cart"></i> Commandes</a></li>
             <li><a href="Stock.php"><i class="fas fa-boxes"></i> Suivi de stock</a></li>
+<<<<<<< HEAD
             <li><a href="ListeProduit/.php"><i class="fas fa-list"></i> Liste des produits</a></li>
+=======
+            <li><a href="ListeProduit.php"><i class="fas fa-list"></i> Liste des produits</a></li>
+>>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)
             <!-- <li><a href="../Rapport/Rapport.php"><i class="fas fa-chart-line"></i> Rapports prestations</a></li> -->
             <li><a href="Utilisateurs.php"><i class="fas fa-chart-line"></i> Utilisateurs</a></li>
             <li><a href="deconnexion.php"><i class="fas fa-chart-line"></i> Deconnexion</a></li>

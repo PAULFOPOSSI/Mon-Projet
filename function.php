@@ -34,6 +34,10 @@
             return $query_run;
         }
     }
+<<<<<<< HEAD
 ?>
 <!-- hh -->
  
+=======
+?>
+>>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)

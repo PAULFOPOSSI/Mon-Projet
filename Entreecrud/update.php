@@ -9,9 +9,12 @@
         $codeFacture = $_POST["code_facture"];
         $date = $_POST["date"];
         $nomFournisseur = $_POST["nomFournisseur"];
+<<<<<<< HEAD
         $adresseFournisseur = $_POST['AdresseFournisseur'];
         $emailFournisseur = $_POST['emailFournisseur'];
         $telFournisseur = $_POST["telFournisseur"];
+=======
+>>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)
         $libelleOp = $_POST["libelleOperation"];
         $nomProduit = $_POST["nomProduit"];
         $cathegorie = $_POST['Cathegorie'];
@@ -21,8 +24,13 @@
         $stockMax = $_POST["stockMax"];
         $caracteristiques = $_POST["caracteristiques"];
 
+<<<<<<< HEAD
         $sql = $con->prepare("UPDATE entrees SET Code_Facture = ?, `Date` = ?, Libelle_Op = ?, Nom_produit = ?, Cathegorie = ?, Caracteristiques = ?, Quantitee_Entree = ?, Nom_Fournisseur = ?, Adresse_Fournisseur = ?, Email_Fournisseur = ?, Tel_Fournisseur = ?, Prix_Achat = ?, Stock_min = ?, Stock_max = ? WHERE id = ?");
         $sql->bind_param("ssssssisssiiiii", $codeFacture, $date, $libelleOp, $nomProduit, $cathegorie,$caracteristiques, $qteEntree, $nomFournisseur, $adresseFournisseur, $emailFournisseur, $telFournisseur, $prixAchat, $stockMin, $stockMax, $id);
+=======
+        $sql = $con->prepare("UPDATE entrees SET Code_Facture = ?, `Date` = ?, Libelle_Op = ?, Nom_produit = ?, Cathegorie = ?, Caracteristiques = ?, Quantitee_Entree = ?, Nom_Fournisseur = ?, Prix_Achat = ?, Stock_min = ?, Stock_max = ? WHERE id = ?");
+        $sql->bind_param("ssssssisiiii", $codeFacture, $date, $libelleOp, $nomProduit, $cathegorie,$caracteristiques, $qteEntree, $nomFournisseur, $prixAchat, $stockMin, $stockMax, $id);
+>>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)
 
         if ($sql->execute()) {
             echo "Les données ont été modifié avec succès";
@@ -66,9 +74,31 @@
 
                                 <label>Nom Produit: </label>
                                 <input type="text" name="nomProduit" value="<?= $item['Nom_produit'] ?>" required>
+<<<<<<< HEAD
                                 
                                 <label>Cathegorie: </label>
                                 <input type="text" name="Cathegorie" value="<?= $item['Cathegorie'] ?>" required>
+=======
+
+                                <label for="">Cathegories</label>
+                                <select name="Cathegorie" id="" required onchange="showLevelSelect(this.value)">
+                                    <?php
+                                        // Recuperer les cathegories de la bd
+                                        $id_cathegorie = $item['Cathegorie'];
+                                        $cathegorie = getAlls('cathegories');
+
+                                        // Afficher les cathegories dans le select
+                                        if(mysqli_num_rows($cathegorie) > 0){
+                                            $cathegorie = mysqli_fetch_assoc($cathegorie);
+                                            ?>
+                                                <option value="<?= $cathegorie['id'] ?>"><?= $cathegorie['libelle_cathegorie'] ?></option>
+                                            <?php
+                                        } else {
+                                            echo "<option>Aucune categorie trouve !</option>";
+                                        }
+                                    ?>
+                                </select>
+>>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)
 
                                 <label>Caractéristiques: </label>
                                 <textarea name="caracteristiques" required><?= ($item['Caracteristiques']) ?></textarea>
@@ -76,6 +106,7 @@
                                 <label>Quantitée Entrée: </label>
                                 <input type="number" value="<?= $item['Quantitee_Entree'] ?>" name="quantiteEntree" >
 
+<<<<<<< HEAD
                                 <label>Nom Fournisseur: </label>
                                 <input type="text" value="<?= $item['Nom_Fournisseur'] ?>" name="nomFournisseur" required>
 
@@ -87,6 +118,20 @@
 
                                 <label>Tél Fournisseur: </label>
                                 <input type="number" value="<?= $item['Tel_Fournisseur'] ?>" name="telFournisseur" >
+=======
+                                <?php
+                                    $id_fournisseur = $item['Nom_Fournisseur'];
+                                    $fournisseur = getAllEnterById('fournisseurs', $id_fournisseur);
+
+                                    if(mysqli_num_rows($fournisseur) > 0){
+                                        $fournisseur = mysqli_fetch_assoc($fournisseur);
+                                        ?>
+                                            <label>Nom Fournisseur: </label>
+                                            <input type="text" value="<?= $fournisseur['Nom_Fournisseur'] ?>" name="nomFournisseur" >
+                                        <?php
+                                    }
+                                ?>
+>>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)
 
                                 <label>P.Achat (Fcfa): </label>
                                 <input type="number" value="<?= $item['Prix_Achat'] ?>" name="pAchat" >

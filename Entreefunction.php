@@ -43,4 +43,25 @@
             return $query_run;
         }
     }
+<<<<<<< HEAD
+=======
+
+    if(!function_exists("getAlls")){
+        function getAlls($table){
+            global $con;
+            $query = "SELECT * FROM $table";
+            $query_run = mysqli_query($con, $query);
+            return $query_run;
+        }
+    }
+
+    if(!function_exists("getAllCategorieById")){
+        function getAllCategorieById($table, $id){
+            global $con;
+            $query = "SELECT * FROM $table WHERE id = $id";
+            $query_run = mysqli_query($con, $query);
+            return $query_run;
+        }
+    }
+>>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)
 ?>

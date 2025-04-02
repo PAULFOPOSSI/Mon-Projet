@@ -82,6 +82,11 @@ include "Entreefunction.php";
                                 </tr> 
                             <?php
                         }
+<<<<<<< HEAD
+=======
+                    } else {
+                        echo "<tr><td colspan='6'>Aucune entrée trouvée.</td></tr>";
+>>>>>>> 9b68d3f (Initialisation du projet et ajout des fichiers)
                     }
                 ?>
             </tbody>
